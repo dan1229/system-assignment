@@ -14,14 +14,19 @@ var keyPublicVsPrivate = 'Public vs Private';
 // higher level education
 var keyHigherLevel = 'Higher Level';
 var keyStudentLoanDebt = 'Student Loan Debt';
-var keyUnequalAdmissions = 'Unequal Opportunity';
+var keyUnequalAdmissions = 'Unequal Admissions';
 var keyHighRankingUniversities = 'High Ranking Universities';
-
+var keyIndividualEffect = 'Individual Effect';
+var keyMacroeconomicEffect = 'Macroeconomic Effect';
+var keyAlternativeEducation = 'Alternative Education';
+var keyTradeSchools = 'Trade Schools';
+var keyCodingBootcamps = 'Coding Bootcamps';
+var keyOnlineSchools = 'Online Schools';
 
 // international comparison
 var keyInternational = 'International';
 var keyQualitativeDifferences = 'Qualitative Differences';
-var keyUSRank = 'US Rankings';
+var keyUSRank = 'US Test Rankings';
 var keyUSRankMath = 'US Rank Math';
 var keyUSRankScience = 'US Rank Science';
 var keyUSRankReading = 'US Rank Reading';
@@ -45,6 +50,12 @@ var elements = [
   { data: { id: keyStudentLoanDebt } },
   { data: { id: keyUnequalAdmissions } },
   { data: { id: keyHighRankingUniversities } },
+  { data: { id: keyIndividualEffect } },
+  { data: { id: keyMacroeconomicEffect } },
+  { data: { id: keyAlternativeEducation } },
+  { data: { id: keyTradeSchools } },
+  { data: { id: keyCodingBootcamps } },
+  { data: { id: keyOnlineSchools } },
   // INTERNATIONAL EDUCATION ========
   { data: { id: keyInternational } },
   { data: { id: keyQualitativeDifferences } },
@@ -78,7 +89,7 @@ var elements = [
       id: 'E-I',
       source: keyEducation,
       target: keyInternational,
-      desc: "Internation education - how does the US compare internationally",
+      desc: "International education - how does the US compare internationally",
     }
   },
   // PRIMARY EDUCATION
@@ -133,10 +144,19 @@ var elements = [
   },
   {
     data: {
-      id: 'UA-PF',
-      source: keyUnequalAdmissions,
-      target: keyPublicFunding,
+      id: 'PF-UA',
+      source: keyPublicFunding,
+      target: keyUnequalAdmissions,
       desc: "One of the most obvious sources of such unequal admissions opportunity is disproportinate funding amongs primary schools. Not only does this (theoretically) lead to lower education quality, but it restricts students opportunities to be more competitive. Fewer SATs (and tutors), ACT, AP, IB, etc. - all the things that students nowadays \'need\' to compete. This article is a bit old but I remember reading it in high school and really appreciating it. https://www.theatlantic.com/education/archive/2014/07/why-poor-schools-cant-win-at-standardized-testing/374287/",
+    }
+  },
+
+  {
+    data: {
+      id: 'PF-USR',
+      source: keyPublicFunding,
+      target: keyUSRank,
+      desc: "Lack of public funding is often cited as the most direct cause (and simplest fix) for the falling test scores in the US. While a true solution is undoubtedly larger than this one pitfall, there's no question that lack of funds nowadays especially is at least close to the root of this issue."
     }
   },
   {
@@ -144,7 +164,55 @@ var elements = [
       id: 'HL-HRU',
       source: keyHigherLevel,
       target: keyHighRankingUniversities,
-      desc: "Despite all the issues listed, the US is home to MANY of the best and most prestigious universities in the world. I think this is a really interesting point so heres a couple interesting articles I found. Despite the source on this one, there are many interesting viewpoints and theory here as to why this is the case: https://academia.stackexchange.com/questions/55792/why-are-most-of-the-top-universities-american. This times article argues actually the opposite, that these rankings are actually far off for various reasons https://www.nytimes.com/2014/06/29/upshot/americans-think-we-have-the-worlds-best-colleges-we-dont.html.",
+      desc: "Despite all the issues listed, the US is home to MANY of the best and most prestigious universities in the world. I think this is a really interesting point so heres a couple interesting articles I found. Despite the source on this one, there are many interesting viewpoints and theory here as to why this is the case: https://academia.stackexchange.com/questions/55792/why-are-most-of-the-top-universities-american. This times article argues actually the opposite, that these rankings are actually far off for various reasons https://www.nytimes.com/2014/06/29/upshot/americans-think-we-have-the-worlds-best-colleges-we-dont.html",
+    }
+  },
+  {
+    data: {
+      id: 'SLD-IE',
+      source: keyStudentLoanDebt,
+      target: keyIndividualEffect,
+      desc: "Skyrocketing student loan debts have profound effects on the individuals and families surrounding them. With such a high prevalence of such loans, any increased fiscal trouble compounds in stress and importance. This has obvious and outreaching effects on these individuals and their loved ones. Beyond the personal stresses, the amount of financial toll it takes on a person can be devastating https://www.pewtrusts.org/en/research-and-analysis/fact-sheets/2020/04/student-loan-default-has-serious-financial-consequences.",
+    }
+  },
+  {
+    data: {
+      id: 'SLD-MEE',
+      source: keyStudentLoanDebt,
+      target: keyMacroeconomicEffect,
+      desc: "The pressure that so much unpaid loans puts on our economy cannot be understated - e.g., 2008 recession. Many such debts end up being defaulted on or cancelled, nowadays especially as many people begin NEVER paying off their debt, it's starting to accrue and be passed down to future generations. http://www.levyinstitute.org/publications/the-macroeconomic-effects-of-student-debt-cancellation",
+    }
+  },
+  {
+    data: {
+      id: 'HL-AE',
+      source: keyHigherLevel,
+      target: keyAlternativeEducation,
+      desc: "In recent years, especially with the rise in technology and increased technical skill requirements, we've seen drastic increases in \'alternate\' forms of education. This includes trade and technical schools, coding bootcamps, online schools and other mediums. For more about stats regarding the rise in trade schools specifically: https://www.jamesgmartin.center/2020/02/did-you-know-trade-schools-showing-strong-enrollment-growth/",
+    }
+  },
+  {
+    data: {
+      id: 'AE-TS',
+      source: keyAlternativeEducation,
+      target: keyTradeSchools,
+      desc: "Trade schools are secondary schools designed to train students for specific skills or roles. This includes a vast variety of schools that may not be available through a \'standard\' university. In recent years, with the rise of tuition costs, many people are seeing this route as much more fiscally reasonable and sometimes even similar or even better payoff. Interestingly as well, many jobs trade schools prepare students for are considered on the tougher end of those to automate, offering a new and important level of job security. https://hbr.org/2019/10/to-prepare-for-automation-stay-curious-and-dont-stop-learning"
+    }
+  },
+  {
+    data: {
+      id: 'AE-CB',
+      source: keyAlternativeEducation,
+      target: keyCodingBootcamps,
+      desc: "Coding bootcamps are a newer and very popular form of alternative education nowadays, often advertising \'fast and easy\' ways to break into the everygrowing tech/development world. Despite mixed reviews and beliefs on the effectiveness of such programs, there's no doubt that in a world that values such skills so highly (and more every day) having a quick way to get your foot in the door is incredibly valuable. For many interesting statistics about bootcamp popularity and demographics visit: https://www.switchup.org/rankings/coding-bootcamp-survey"
+    }
+  },
+  {
+    data: {
+      id: 'AE-OS',
+      source: keyAlternativeEducation,
+      target: keyOnlineSchools,
+      desc: "Debatably no longer \'alternative education\' online schools have been around for a while now and as of March 2020 are seeming to be the standard at every higher level institute in the world. Online schools used to have a lot of stigma surrounding them so I believe the fact that every school is now an online school should offer a whole new field for schools to innovate and prove they\'re worth the extra money compared to a \'traditional\' online school. As someone who's had a fair mix of online courses, both in terms of quality and quantity, I think the future here will be very interesting to see how all schools evolve and if this becomes standardized, even at the primary school level. Some interesting numbers about how COVID's shift to online learning has affected education here: https://www.frontiersin.org/articles/10.3389/fpubh.2020.576227/full"
     }
   },
   // INTERNATIONAL COMPARISON
@@ -155,6 +223,22 @@ var elements = [
       source: keyInternational,
       target: keyQualitativeDifferences,
       desc: "Beyond just rankings, there are real, tangible differences in the quality of education in the US vs other OECD countries. These go beyond just the test scores and rankings, especially when you look more towards the \'average\' or \'normal\' school in the US."
+    }
+  },
+  {
+    data: {
+      id: 'QD-ST',
+      source: keyQualitativeDifferences,
+      target: keyScienceAndTechnology,
+      desc: "Other OECD place a much higher emphasis on STEM and 'technical' subjects. I think this is really interesting because this is a bit more 'controversial', many in the US think we already place too much emphasis on purely STEM emphasis in primary school and push too many students to such an end. It's difficult to prove if this has any macro effect on the economy or even test scores to be frank but I think the most direct and obvious effect is on how these students careers and interests progress. An interesting way to quantify such shifts can be seen in the statistics on this page, comparing many Americans demographics and views on the matter: https://www.pewsocialtrends.org/2018/01/09/5-most-americans-evaluate-stem-education-as-middling-compared-with-other-developed-nations/",
+    }
+  },
+  {
+    data: {
+      id: 'QD-PE',
+      source: keyQualitativeDifferences,
+      target: keyPhysicalEducation,
+      desc: "Other countries value PE more than the US - flat out. The effects of which on students at the time and long term cannot be understated as well. For a fairly general view of how an interesting mix of countries like (China, Scottland, New Zealand and Jamaica) differ quantitatively and qualitatively from the US: http://www.pelinks4u.org/articles/rattigan0210.htm",
     }
   },
   // rankings
@@ -201,7 +285,7 @@ var cy = cytoscape({
       selector: 'node',
       style: {
         shape: 'circle',
-        'background-color': '#FFC300',
+        'background-color': '#fdf203',
         label: 'data(id)'
       }
     },
@@ -217,17 +301,23 @@ var cy = cytoscape({
     }
   ],
   layout: {
-    name: 'circle'
+    name: 'breadthfirst'
   }
 });
 
 // specific styles
 var color1 = '#581845';
 var color2 = '#C70039';
+var color3 = '#fd9a03';
 cy.nodes('[id = \'' + keyEducation + '\']').style('background-color', color1);
 cy.nodes('[id = \'' + keyPrimary + '\']').style('background-color', color2);
 cy.nodes('[id = \'' + keyHigherLevel + '\']').style('background-color', color2);
 cy.nodes('[id = \'' + keyInternational + '\']').style('background-color', color2);
+cy.nodes('[id = \'' + keyStudentLoanDebt + '\']').style('background-color', color3);
+cy.nodes('[id = \'' + keyUSRank + '\']').style('background-color', color3);
+cy.nodes('[id = \'' + keyQualitativeDifferences + '\']').style('background-color', color3);
+cy.nodes('[id = \'' + keyAlternativeEducation + '\']').style('background-color', color3);
+cy.nodes('[id = \'' + keyPublicFunding + '\']').style('background-color', color3);
 
 // make edges show dialog on click
 cy.on('click', 'edge', function (evt) {
