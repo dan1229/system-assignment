@@ -89,7 +89,7 @@ var elements = [
       id: 'E-I',
       source: keyEducation,
       target: keyInternational,
-      desc: "International education - how does the US compare internationally",
+      desc: "International education comparison - how does the US compare internationally",
     }
   },
   // PRIMARY EDUCATION
@@ -147,7 +147,7 @@ var elements = [
       id: 'PF-UA',
       source: keyPublicFunding,
       target: keyUnequalAdmissions,
-      desc: "One of the most obvious sources of such unequal admissions opportunity is disproportinate funding amongs primary schools. Not only does this (theoretically) lead to lower education quality, but it restricts students opportunities to be more competitive. Fewer SATs (and tutors), ACT, AP, IB, etc. - all the things that students nowadays \'need\' to compete. This article is a bit old but I remember reading it in high school and really appreciating it. https://www.theatlantic.com/education/archive/2014/07/why-poor-schools-cant-win-at-standardized-testing/374287/",
+      desc: "One of the most obvious sources of such inequal admissions opportunity is disproportinate funding amongs primary schools. Not only does this (theoretically) lead to lower education quality, but it restricts students opportunities to be more competitive. Fewer SATs (and tutors), ACT, AP, IB, etc. - all the things that students nowadays \'need\' to compete. This article is a bit old but I remember reading it in high school and really appreciating it. https://www.theatlantic.com/education/archive/2014/07/why-poor-schools-cant-win-at-standardized-testing/374287/",
     }
   },
 
